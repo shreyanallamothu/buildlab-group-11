@@ -1,11 +1,11 @@
 import { db } from "@/db";
 import { communities, posts, resources } from "@/db/schema";
-import { communities, posts, events,} from "@/db/schema";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CommunityNav from "@/components/CommunityNav";
 import type { CommunityPageProps } from "@/types";
+import NewResourceForm from "@/components/NewResourceForm";
 
 // ============================================================
 // COMMUNITY HOMEPAGE
@@ -88,7 +88,10 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
       </section>
 
       <section className="mt-8">
-        <h2 className="mb-4 text-xl font-semibold text-gray-900">Resources</h2>
+        <div className="mb-4 flex items-center justify-between gap-4">
+          <h2 className="text-xl font-semibold text-gray-900">Resources</h2>
+          <NewResourceForm communityId={community.id} />
+        </div>
 
         {communityResources.length === 0 ? (
           <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
