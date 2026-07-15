@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { communities, posts, events,} from "@/db/schema";
+import { communities, posts } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import CommunityNav from "@/components/CommunityNav";
@@ -42,7 +42,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">{community.name}</h1>
+        <h1 className="page-title">{community.name}</h1>
         <p className="mt-2 text-gray-600">{community.description}</p>
       </div>
 
