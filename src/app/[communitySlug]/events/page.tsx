@@ -3,6 +3,7 @@ import { communities, events } from "@/db/schema";
 import { asc, eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import CommunityNav from "@/components/CommunityNav";
+import NewEventForm from "@/components/NewEventForm";
 import type { CommunityPageProps } from "@/types";
 
 // ============================================================
@@ -37,13 +38,14 @@ export default async function EventsPage({ params }: CommunityPageProps) {
 
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">
-          {community.name} - Events
-        </h1>
-        <p className="mt-2 text-gray-600">
-          Upcoming events for {community.name}.
-        </p>
+      <div className="mb-8 flex items-start justify-between gap-4">
+        <div>
+          <h1 className="page-title">{community.name} - Events</h1>
+          <p className="mt-2 text-gray-600">
+            Upcoming events for {community.name}.
+          </p>
+        </div>
+        <NewEventForm communityId={community.id} />
       </div>
 
       <CommunityNav slug={community.slug} activeTab="events" />
@@ -69,6 +71,10 @@ export default async function EventsPage({ params }: CommunityPageProps) {
               </h2>
               <p className="mt-2 text-gray-700">{event.description}</p>
               <div className="mt-4 space-y-1 text-sm text-gray-500">
+                <p>
+                  <span className="font-medium text-gray-700">Location:</span>{" "}
+                  {event.location}
+                </p>
                 <p>
                   <span className="font-medium text-gray-700">Starts:</span>{" "}
                   {event.startTime.toLocaleString("en-US", {

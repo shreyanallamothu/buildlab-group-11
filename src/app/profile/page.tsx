@@ -11,7 +11,7 @@
 export default function ProfilePage() {
   return (
     <div>
-      <h1 className="mb-4 text-3xl font-bold text-gray-900">Your Profile</h1>
+      <h1 className="page-title mb-4">Your Profile</h1>
 
       <div className="rounded-lg border-2 border-dashed border-gray-300 bg-white p-12 text-center">
         <p className="text-lg font-medium text-gray-400">
