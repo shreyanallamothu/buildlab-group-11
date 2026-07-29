@@ -1,5 +1,4 @@
 import { db } from "@/db";
-import { communities, posts } from "@/db/schema";
 import { communities, posts, resources } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
