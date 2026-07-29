@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import CommunityNav from "@/components/CommunityNav";
 import type { CommunityPageProps } from "@/types";
 import NewResourceForm from "@/components/NewResourceForm";
+import ResourceSearch from "@/components/ResourceSearch";
 
 // ============================================================
 // COMMUNITY HOMEPAGE
@@ -93,30 +94,7 @@ export default async function CommunityPage({ params }: CommunityPageProps) {
           <NewResourceForm communityId={community.id} />
         </div>
 
-        {communityResources.length === 0 ? (
-          <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
-            <p className="text-gray-500">No resources yet.</p>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {communityResources.map((resource) => (
-              <a
-                key={resource.id}
-                href={resource.url}
-                target="_blank"
-                rel="noreferrer"
-                className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {resource.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  {resource.description}
-                </p>
-              </a>
-            ))}
-          </div>
-        )}
+        <ResourceSearch resources={communityResources} />
       </section>
     </div>
   );
