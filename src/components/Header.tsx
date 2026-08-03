@@ -28,34 +28,45 @@ export default function Header() {
   }, [showUserPicker]);
 
   return (
-    <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <Link href="/" className="text-xl font-bold text-gray-900">
-          🏘️ Community Hub
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-brand-forest/95 text-white shadow-[0_8px_30px_rgb(0_0_0/0.08)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+        <Link href="/" className="group" aria-label="The Kircuit home">
+          <span className="text-xl font-bold tracking-[-0.04em] text-white">
+            The <span className="text-brand-lime">Kircuit</span>
+          </span>
         </Link>
 
-        <nav className="flex items-center gap-4">
+        <nav
+          className="flex items-center gap-3 sm:gap-5"
+          aria-label="Main navigation"
+        >
+          <Link
+            href="/members"
+            className="text-sm font-semibold text-white/80 hover:text-brand-lime"
+          >
+            Members
+          </Link>
           {user ? (
             <>
               <Link
                 href="/profile"
-                className="text-sm text-gray-600 hover:text-gray-900"
+                className="text-sm font-semibold text-white/80 hover:text-brand-lime"
               >
                 Profile
               </Link>
-              <div className="flex items-center gap-2">
+              <div className="hidden items-center gap-2 sm:flex">
                 <img
                   src={user.image}
                   alt={user.name}
-                  className="h-8 w-8 rounded-full"
+                  className="h-8 w-8 rounded-full ring-2 ring-white/20"
                 />
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-sm font-medium text-white">
                   {user.name}
                 </span>
               </div>
               <button
                 onClick={logout}
-                className="rounded-md bg-gray-100 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-200"
+                className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20"
               >
                 Log out
               </button>
@@ -64,13 +75,13 @@ export default function Header() {
             <div className="relative" ref={pickerRef}>
               <button
                 onClick={() => setShowUserPicker(!showUserPicker)}
-                className="rounded-md bg-blue-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+                className="rounded-full bg-brand-lime px-5 py-2 text-sm font-bold text-brand-forest shadow-sm hover:-translate-y-0.5 hover:bg-brand-lime-dark"
               >
                 Log in
               </button>
               {showUserPicker && (
-                <div className="absolute right-0 top-10 z-10 w-56 rounded-lg border border-gray-200 bg-white p-2 shadow-lg">
-                  <p className="mb-2 px-2 text-xs font-medium text-gray-500">
+                <div className="absolute right-0 top-12 z-10 w-64 rounded-2xl border border-gray-200 bg-white p-2.5 text-brand-forest shadow-2xl">
+                  <p className="mb-2 px-2 text-xs font-semibold text-gray-700">
                     Pick a user (dev mode)
                   </p>
                   {SEED_USERS.map((seedUser) => (
@@ -80,7 +91,7 @@ export default function Header() {
                         login(seedUser);
                         setShowUserPicker(false);
                       }}
-                      className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-sm hover:bg-gray-100"
+                      className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium text-brand-forest hover:bg-gray-100"
                     >
                       <img
                         src={seedUser.image}

@@ -11,7 +11,7 @@
 
 import { SEED_USERS } from "./seed-users";
 
-export const DEV_AUTH_COOKIE_NAME = "community-hub-user-id";
+export const DEV_AUTH_COOKIE_NAME = "the-kircuit-user-id";
 
 /**
  * Find a seed user by their ID.

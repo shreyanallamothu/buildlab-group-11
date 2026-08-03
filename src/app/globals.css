@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8f3;
+  --foreground: #102f28;
 }
 
 @theme inline {
@@ -10,21 +10,69 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Editorial forest-and-lime palette inspired by the visual reference */
+  --color-blue-50: #e8f4ef;
+  --color-blue-500: #17705e;
+  --color-blue-600: #0d5849;
+  --color-blue-700: #073b31;
+  --color-gray-50: #f6f3ef;
+  --color-gray-100: #ece8e2;
+  --color-gray-200: #d9d7cf;
+  --color-gray-300: #bbc1b7;
+  --color-gray-400: #687d72;
+  --color-gray-500: #496258;
+  --color-gray-600: #304f44;
+  --color-gray-700: #304f44;
+  --color-gray-800: #183f35;
+  --color-gray-900: #073b31;
+  --color-brand-forest: #073b31;
+  --color-brand-lime: #dfff70;
+  --color-brand-lime-dark: #ccec57;
+  --color-brand-lavender: #e8e2ff;
+  --color-brand-cream: #f7f8f3;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(
+      circle at 8% 4%,
+      rgb(223 255 112 / 0.14),
+      transparent 25rem
+    ),
+    radial-gradient(
+      circle at 94% 26%,
+      rgb(232 226 255 / 0.45),
+      transparent 28rem
+    );
+  background-attachment: fixed;
+}
+
+::selection {
+  background: #d7ff73;
+  color: #003c32;
 }
 
 .page-title {
-  @apply text-3xl font-bold text-blue-700;
+  @apply text-4xl font-bold tracking-[-0.04em] text-brand-forest sm:text-5xl;
+}
+
+button,
+a,
+input,
+textarea {
+  @apply transition-all duration-200;
+}
+
+input,
+textarea {
+  @apply outline-none;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(23 112 94 / 0.3);
+  outline-offset: 3px;
 }

@@ -60,7 +60,7 @@ export default function NewResourceForm({ communityId }: NewResourceFormProps) {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-brand-forest/70 p-4 backdrop-blur-sm"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) closeDialog();
           }}
@@ -69,11 +69,11 @@ export default function NewResourceForm({ communityId }: NewResourceFormProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="new-resource-title"
-            className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl"
+            className="w-full max-w-md rounded-[2rem] border border-white/50 bg-white p-7 shadow-2xl"
           >
             <h2
               id="new-resource-title"
-              className="mb-4 text-xl font-semibold text-gray-900"
+              className="mb-5 text-2xl font-bold tracking-tight text-gray-900"
             >
               Add a resource
             </h2>

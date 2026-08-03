@@ -38,10 +38,13 @@ export default async function EventsPage({ params }: CommunityPageProps) {
 
   return (
     <div>
-      <div className="mb-8 flex items-start justify-between gap-4">
+      <div className="mb-8 flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-gray-200/70 bg-white/75 p-7 shadow-[0_12px_40px_rgb(7_59_49/0.06)] backdrop-blur sm:flex-row sm:p-10">
         <div>
-          <h1 className="page-title">{community.name} - Events</h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
+            What’s happening
+          </p>
+          <h1 className="page-title">{community.name} Events</h1>
+          <p className="mt-4 text-gray-600">
             Upcoming events for {community.name}.
           </p>
         </div>
@@ -51,7 +54,7 @@ export default async function EventsPage({ params }: CommunityPageProps) {
       <CommunityNav slug={community.slug} activeTab="events" />
 
       {communityEvents.length === 0 ? (
-        <div className="rounded-lg border border-gray-200 bg-white p-8 text-center">
+        <div className="rounded-3xl border border-dashed border-gray-300 bg-white/70 p-10 text-center">
           <p className="text-lg font-medium text-gray-700">
             No events have been added yet.
           </p>
@@ -64,9 +67,9 @@ export default async function EventsPage({ params }: CommunityPageProps) {
           {communityEvents.map((event) => (
             <article
               key={event.id}
-              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-3xl border border-gray-200/80 bg-white p-7 shadow-sm hover:-translate-y-0.5 hover:shadow-lg"
             >
-              <h2 className="text-xl font-semibold text-gray-900">
+              <h2 className="text-xl font-bold tracking-tight text-gray-900">
                 {event.name}
               </h2>
               <p className="mt-2 text-gray-700">{event.description}</p>

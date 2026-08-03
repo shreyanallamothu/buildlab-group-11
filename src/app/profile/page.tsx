@@ -45,9 +45,12 @@ export default async function ProfilePage() {
 
   return (
     <div>
-      <h1 className="page-title mb-6">Your Profile</h1>
+      <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
+        Your space
+      </p>
+      <h1 className="page-title mb-8">Profile</h1>
 
-      <section className="flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <section className="flex items-center gap-5 rounded-[2rem] border border-gray-200/80 bg-white p-7 shadow-sm">
         {user.image ? (
           <img
             src={user.image}
@@ -82,7 +85,7 @@ export default async function ProfilePage() {
               <Link
                 key={post.id}
                 href={`/${post.communitySlug}/posts/${post.id}`}
-                className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="block rounded-3xl border border-gray-200/80 bg-white p-7 shadow-sm hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold text-gray-900">

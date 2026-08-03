@@ -8,9 +8,12 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   return (
-    <div className="flex min-h-[50vh] flex-col items-center justify-center text-center">
-      <h1 className="text-2xl font-bold text-gray-900">
-        😬 Something went wrong
+    <div className="mx-auto flex min-h-[50vh] max-w-xl flex-col items-center justify-center rounded-[2rem] border border-gray-200/80 bg-white/70 p-10 text-center shadow-sm">
+      <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-brand-lavender text-xl font-black text-brand-forest">
+        !
+      </div>
+      <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+        We hit a loose connection
       </h1>
       <p className="mt-4 max-w-md text-gray-600">
         {error.message.includes("SQLITE") ||
@@ -28,7 +31,7 @@ export default function ErrorPage({
 
       <button
         onClick={reset}
-        className="mt-6 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+        className="mt-6 rounded-full bg-brand-forest px-5 py-2.5 text-sm font-bold text-white hover:-translate-y-0.5 hover:bg-blue-700"
       >
         Try again
       </button>

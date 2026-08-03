@@ -44,9 +44,9 @@ export default function NewCommunityForm() {
       <Button label="+ New Community" onClick={() => setOpen(true)} />
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl">
-            <h2 className="mb-4 text-xl font-semibold text-gray-900">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-forest/70 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-[2rem] border border-white/50 bg-white p-7 shadow-2xl">
+            <h2 className="mb-5 text-2xl font-bold tracking-tight text-gray-900">
               Create a new community
             </h2>
 

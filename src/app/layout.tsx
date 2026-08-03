@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Community Hub",
-  description: "A place to connect, share, and build together.",
+  title: {
+    default: "The Kircuit",
+    template: "%s · The Kircuit",
+  },
+  description: "Find your people, share what matters, and build community.",
 };
 
 export default function RootLayout({
@@ -30,10 +33,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-gray-50">
+      <body className="flex min-h-full flex-col bg-gray-50">
         <AuthProvider>
           <Header />
-          <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
+          <main className="mx-auto w-full max-w-6xl flex-1 px-5 py-8 sm:px-8 sm:py-12">
             {children}
           </main>
           <Footer />

@@ -1,7 +1,7 @@
 import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
 // ============================================================
-// DATABASE SCHEMA — Community Hub
+// DATABASE SCHEMA — The Kircuit
 // ============================================================
 // This file defines all the tables in the database.
 // Participants will modify this file when tickets require schema changes

@@ -14,7 +14,9 @@ export async function POST(request: Request) {
 
   if (!/^[a-z0-9-]+$/.test(slug)) {
     return NextResponse.json(
-      { error: "Slug may only contain lowercase letters, numbers, and hyphens." },
+      {
+        error: "Slug may only contain lowercase letters, numbers, and hyphens.",
+      },
       { status: 400 },
     );
   }

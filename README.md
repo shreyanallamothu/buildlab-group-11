@@ -1,4 +1,4 @@
-# Community Hub 🏘️
+# The Kircuit
 
 A community platform where people can share posts, organize events, and collect resources. Built with Next.js, TypeScript, Tailwind CSS, and Neon Postgres.
 
@@ -40,7 +40,7 @@ The placeholder pages have comments telling you exactly which tickets will modif
 ## Project Structure
 
 ```
-community-hub/
+the-kircuit/
 ├── src/
 │   ├── app/                    # Pages and API routes (Next.js App Router)
 │   │   ├── page.tsx            # Homepage — lists all communities

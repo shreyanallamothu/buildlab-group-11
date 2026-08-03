@@ -8,7 +8,7 @@ import * as schema from "./schema";
 import { sql } from "drizzle-orm";
 
 // ============================================================
-// SEED SCRIPT — Community Hub
+// SEED SCRIPT — The Kircuit
 // ============================================================
 // Run this with: pnpm run seed
 // It fills the database with sample data so you have something
@@ -34,25 +34,25 @@ async function seed() {
       id: "user-1",
       name: "Alex Rivera",
       email: "alex@example.com",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+      image: "/members/alex-rivera.jpg",
     },
     {
       id: "user-2",
       name: "Jordan Chen",
       email: "jordan@example.com",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan",
+      image: "/members/jordan-chen.jpg",
     },
     {
       id: "user-3",
       name: "Sam Okafor",
       email: "sam@example.com",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sam",
+      image: "/members/sam-okafor.jpg",
     },
     {
       id: "user-4",
       name: "Maya Patel",
       email: "maya@example.com",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maya",
+      image: "/members/maya-patel.jpg",
     },
   ];
 

@@ -14,11 +14,12 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const base =
-    "rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50";
+    "rounded-full px-5 py-2.5 text-sm font-bold shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0";
 
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-100 text-gray-700 hover:bg-gray-200",
+    primary:
+      "bg-brand-lime text-brand-forest hover:bg-brand-lime-dark ring-1 ring-brand-forest/10",
+    secondary: "bg-brand-lavender text-brand-forest hover:bg-gray-200",
   };
 
   return (
